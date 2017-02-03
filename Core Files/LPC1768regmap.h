@@ -2,10 +2,11 @@
  * AUTHOR:        Alec Selfridge
  * VERSION:       1.1
  * DATE CREATED:  10/22/2016
- * LAST MODIFIED: 02/02/2017
+ * LAST MODIFIED: 02/03/2017
  * NOTES:         This is an exhaustive list of all the registers found in
  *                the LPC1768. Due to common names, double-check the register
- *                names for Ethernet & RTC peripherals if used.
+ *                names for Ethernet & RTC peripherals if used. Half-word
+ *                registers are not included.
  */
 #ifndef __LPC1768regmap_H
 #define __LPC1768regmap_H
