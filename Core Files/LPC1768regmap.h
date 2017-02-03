@@ -1,11 +1,12 @@
 /*
-* AUTHOR:   Alec Selfridge
-* VERSION:  1.0
-* DATE:     10/22/2016
-* NOTES:    This is an exhaustive list of all the registers found in
-*           the LPC1768. Due to common names, double-check the register
-*           names for Ethernet & RTC peripherals if used.
-*/
+ * AUTHOR:        Alec Selfridge
+ * VERSION:       1.1
+ * DATE CREATED:  10/22/2016
+ * LAST MODIFIED: 02/02/2017
+ * NOTES:         This is an exhaustive list of all the registers found in
+ *                the LPC1768. Due to common names, double-check the register
+ *                names for Ethernet & RTC peripherals if used.
+ */
 #ifndef __LPC1768regmap_H
 #define __LPC1768regmap_H
 
@@ -110,11 +111,11 @@
 	
 /**************GPIO**************/
 // Direction Control Registers
-#define FIO0DIR (*(volatile unsigned int*)0x2009C000)
-#define FIO1DIR (*(volatile unsigned int*)0x2009C020)
-#define FIO2DIR (*(volatile unsigned int*)0x2009C040)
-#define FIO3DIR (*(volatile unsigned int*)0x2009C060)
-#define FIO4DIR (*(volatile unsigned int*)0x2009C080)
+#define FIO0DIR0 (*(volatile unsigned int*)0x2009C000)
+#define FIO1DIR0 (*(volatile unsigned int*)0x2009C020)
+#define FIO2DIR0 (*(volatile unsigned int*)0x2009C040)
+#define FIO3DIR0 (*(volatile unsigned int*)0x2009C060)
+#define FIO4DIR0 (*(volatile unsigned int*)0x2009C080)
 // Mask Registers
 #define FIO0MASK (*(volatile unsigned int*)0x2009C010)	
 #define FIO1MASK (*(volatile unsigned int*)0x2009C030)
@@ -122,11 +123,11 @@
 #define FIO3MASK (*(volatile unsigned int*)0x2009C070)
 #define FIO4MASK (*(volatile unsigned int*)0x2009C090)
 // Pin Value Registers
-#define FIO0PIN (*(volatile unsigned int*)0x2009C014)
-#define FIO1PIN (*(volatile unsigned int*)0x2009C034)
-#define FIO2PIN (*(volatile unsigned int*)0x2009C054)
-#define FIO3PIN (*(volatile unsigned int*)0x2009C074)
-#define FIO4PIN (*(volatile unsigned int*)0x2009C094)
+#define FIO0PIN0 (*(volatile unsigned int*)0x2009C014)
+#define FIO1PIN0 (*(volatile unsigned int*)0x2009C034)
+#define FIO2PIN0 (*(volatile unsigned int*)0x2009C054)
+#define FIO3PIN0 (*(volatile unsigned int*)0x2009C074)
+#define FIO4PIN0 (*(volatile unsigned int*)0x2009C094)
 // Output Set Registers
 #define FIO0SET (*(volatile unsigned int*)0x2009C018)
 #define FIO1SET (*(volatile unsigned int*)0x2009C038)
