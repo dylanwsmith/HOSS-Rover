@@ -4,7 +4,7 @@
 * Date Created:  11/03/2016
 * Last Modified: 12/10/2016
 * Device:        LPC1768 (mbed LPC1768)
- *************************************/
+**************************************/
 #ifndef SHARP_IR_H
 #define SHARP_IR_H
 
@@ -16,16 +16,19 @@
 #define a1      -40.01913
 #define a2       23.33686
 #define a3       -4.800871
-#define ADCRES 4095.0
+#define ADCRES 4096.0
 #define ADCV      3.3
 #define CMTOIN    2.54
+// misc
+#define NUM_AVG  30
 
 class SHARP_IR
 {
   private:
+    double         avgDist;
     unsigned short ADCchannel;     // which ADC to use (0-5)
-    float          objectDistance; 
     unsigned short rawReading; 
+    float          objectDistance; 
     float          alertDistance;
     bool           unit;           // 0 = metric (cm), 1 = imperial (in) (metric default)
   
@@ -38,6 +41,7 @@ class SHARP_IR
     void  init();
     void  init(float AD);
     void  update();
+    void  avg();
     float getDistance();
     void  setAlertDistance(float distance);
     bool  objectDetected();
