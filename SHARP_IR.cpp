@@ -109,6 +109,20 @@ void SHARP_IR::update()
   fitData(); // implements a best-fit polynomial
 }
 
+// since the sensor polls every 16.5ms or so, we try to intercept a few readings
+// over a rather arbitrary amount of time
+// NOTE: this takes a long time and may not be much more accurate than 1-shot
+void SHARP_IR::avg()
+{
+  avgDist = 0.0;
+  for(int i = 0; i < NUM_AVG; i++) {
+    update();
+    avgDist += objectDistance;
+    for(int j = 0; j < 10000; j++); // arbitrary wait
+  }
+  objectDistance = avgDist / NUM_AVG;
+}
+
 // y = a0 + a1*x + a2*x^2 + a3x^3
 void SHARP_IR::fitData()
 {
