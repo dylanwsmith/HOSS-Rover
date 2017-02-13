@@ -2,7 +2,7 @@
 * Author:        Alec Selfridge
 * Filename:      SHARP_IR.cpp
 * Date Created:  11/03/2016
-* Last Modified: 12/10/2016
+* Last Modified: 02/13/2017
 * Device:        LPC1768 (mbed LPC1768)
  *************************************/
 #include "SHARP_IR.h"
@@ -128,10 +128,15 @@ void SHARP_IR::fitData()
 {
   float x = (float)rawReading / ADCRES * ADCV;
   float y = a0 + (a1*x) + (a2*x*x) + (a3*x*x*x);
-  if(unit == IMPERIAL)
-    objectDistance = y / CMTOIN;
-  else
-    objectDistance = y;
+  // check for infinity (no object) and set to -1.0 if true
+  if(y > 15.0)
+    objectDistance = -1.0;
+  else {
+    if(unit == IMPERIAL)
+      objectDistance = y / CMTOIN;
+    else
+      objectDistance = y;
+  }
 }
 
 float SHARP_IR::getDistance()
