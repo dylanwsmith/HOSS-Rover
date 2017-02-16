@@ -2,7 +2,7 @@
 * Author:        Alec Selfridge
 * Filename:      SHARP_IR.cpp
 * Date Created:  11/03/2016
-* Last Modified: 02/13/2017
+* Last Modified: 02/15/2017
 * Device:        LPC1768 (mbed LPC1768)
  *************************************/
 #include "SHARP_IR.h"
