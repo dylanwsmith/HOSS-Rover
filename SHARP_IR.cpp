@@ -127,7 +127,7 @@ void SHARP_IR::avg()
 void SHARP_IR::fitData()
 {
   float x = (float)rawReading / ADCRES * ADCV;
-  float y = a0 + (a1*x) + (a2*x*x) + (a3*x*x*x);
+  float y = a0 + (a1*x) + (a2*x*x) + (a3*x*x*x) + (a4*x*x*x*x);
   // check for infinity (no object) and set to -1.0 if true
   if(y > 15.0)
     objectDistance = -1.0;

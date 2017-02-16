@@ -7,16 +7,17 @@
                  LPC1768 (mbed LPC1768)
 **************************************/
 #ifndef SHARP_IR_H
-#define SHARP_IR_H
+#define SHARP_IR_H 
 
 // units
 #define METRIC   0
 #define IMPERIAL 1
 // polynomial coefficients
-#define a0       26.67034
-#define a1      -40.01913
-#define a2       23.33686
-#define a3       -4.800871
+#define a0       30.24776
+#define a1      -57.00180
+#define a2       49.66785
+#define a3      -21.14833
+#define a4        3.51488
 #define ADCRES 4096.0
 #define ADCV      3.3
 #define CMTOIN    2.54
