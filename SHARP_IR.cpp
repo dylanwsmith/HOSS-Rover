@@ -123,7 +123,7 @@ void SHARP_IR::avg()
   objectDistance = avgDist / NUM_AVG;
 }
 
-// y = a0 + a1*x + a2*x^2 + a3x^3
+// y = a0 + a1*x + a2*x^2 + a3x^3 + a4x^4
 void SHARP_IR::fitData()
 {
   float x = (float)rawReading / ADCRES * ADCV;
